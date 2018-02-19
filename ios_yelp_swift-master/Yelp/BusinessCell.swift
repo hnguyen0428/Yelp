@@ -20,7 +20,7 @@ class BusinessCell: UITableViewCell {
     
     var business: Business! {
         didSet {
-            nameLabel.text = "\(business.name) hellooooooo"
+            nameLabel.text = business.name
             thumbImageView.setImageWith(business.imageURL!)
             ratingImageView.setImageWith(business.ratingImageURL!)
             addressLabel.text = business.address
