@@ -13,6 +13,8 @@ class BusinessesViewController: UIViewController, UITableViewDelegate, UITableVi
     var businesses: [Business]!
     @IBOutlet weak var tableView: UITableView!
     
+    var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,16 +37,9 @@ class BusinessesViewController: UIViewController, UITableViewDelegate, UITableVi
             }
         )
         
-        /* Example of Yelp search with more search options specified
-         Business.searchWithTerm("Restaurants", sort: .distance, categories: ["asianfusion", "burgers"], deals: true) { (businesses: [Business]!, error: Error!) -> Void in
-         self.businesses = businesses
-         
-         for business in businesses {
-         print(business.name!)
-         print(business.address!)
-         }
-         }
-         */
+        searchBar = UISearchBar()
+        searchBar.sizeToFit()
+        navigationItem.titleView = searchBar
         
     }
     
